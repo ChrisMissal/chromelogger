@@ -2,6 +2,8 @@
 
 The .NET Version of chromelogger.
 
+Install with NuGet: http://nuget.org/packages/ChromeLogger/
+
 ## Version 0.0.1
 
 A very crude implementation. Largely untested, please file any bugs or issues on the GitHub issues page.
