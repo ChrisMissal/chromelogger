@@ -1,11 +1,29 @@
 ![logo](/src/ChromeLogger/icon128.png)
 
-# chromelogger
+# ChromeLogger
 
 The .NET Version of chromelogger. Add output to the Chrome console from your .NET 
 application's server-side code.
 
 Install with NuGet: http://nuget.org/packages/ChromeLogger/
+
+## Setup
+
+At the end of your request, you'll need to set the custom ChromeLogger header, here's an example:
+
+```csharp
+public class WebApiApplication : HttpApplication
+{
+    protected void Application_EndRequest(Object sender, EventArgs e)
+    {
+        Context.Response.Headers.Add(Logger.GetHeader());
+    }
+}
+```
+
+## Version 0.1.2
+
+The most notable change is the requirement to manually add the header at the end of the request
 
 ## Version 0.1.1
 
