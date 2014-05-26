@@ -1,5 +1,7 @@
 using System.Diagnostics;
 using System.Reflection;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ChromeLogger
 {
@@ -7,22 +9,12 @@ namespace ChromeLogger
     {
         private static string _version;
 
-        public LogData(StackData stackData, string level, object obj)
+        public LogData(IEnumerable<object> rows)
         {
-            var type = obj.GetType();
-
             Version = GetVersion();
             Columns = new[] { "log", "backtrace", "type" };
 
-            Rows = new object[]
-            {
-                new object[]
-                {
-                    new object[] { new { ___class_name = type.Namespace + "." + type.Name, obj } },
-                    string.Format("{0} : {1}", stackData.FileName, stackData.LineNumber),
-                    level,
-                }
-            };
+            Rows = rows.ToArray();
         }
 
         private string GetVersion()
