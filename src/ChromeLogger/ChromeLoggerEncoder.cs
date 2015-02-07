@@ -1,20 +1,20 @@
 using System;
 using System.Text;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
+using ServiceStack;
+using ServiceStack.Text;
 
 namespace ChromeLogger
 {
     internal class ChromeLoggerEncoder
     {
-        private static readonly JsonSerializerSettings _serializerSettings = new JsonSerializerSettings
+        static ChromeLoggerEncoder()
         {
-            ContractResolver = new CamelCasePropertyNamesContractResolver(),
-        };
+            JsConfig.EmitCamelCaseNames = true;
+        }
 
         internal string Encode(LogData logData)
         {
-            var serialized = JsonConvert.SerializeObject(logData, _serializerSettings);
+            var serialized = logData.ToJson();
             var toEncodeAsBytes = Encoding.UTF8.GetBytes(serialized);
             return Convert.ToBase64String(toEncodeAsBytes);
         }
