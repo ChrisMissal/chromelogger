@@ -13,5 +13,8 @@
     <iconUrl>https://raw.github.com/ChrisMissal/chromelogger/e3f1d867df483ac25dc3c54b2465d01cc6ee1eb1/src/ChromeLogger/icon128.png</iconUrl>
     <copyright>Copyright 2013 Chris Missal</copyright>
     <tags>chrome console server-side .net</tags>
+    <dependencies>
+      <dependency id="ServiceStack.Text" version="4.0.36" />
+    </dependencies>
   </metadata>
 </package>
