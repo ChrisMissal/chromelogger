@@ -30,6 +30,10 @@ Install with NuGet: https://nuget.org/packages/ChromeLogger.AspNetCore/
 In your `Startup` class add a `using ChromeLogger;` line. Then in the `ConfigureServices` method, add a call to `services.AddChromeLogger();`. Finally in the very first line of the `Configure` method, add a call to `app.UseChromeLogger();`. It is probably a good idea to only make this call in a non-production environment.
 
 # Changelog
+### Version 1.0.1
+
+Ignore Log calls with null parameter.
+
 ### Version 1.0.0
 
 Refactoring project to new project format. Add ASP.NET Core support (2.2.2 and higher)
