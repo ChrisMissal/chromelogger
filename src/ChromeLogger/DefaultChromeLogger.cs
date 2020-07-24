@@ -62,6 +62,11 @@ namespace ChromeLogger
 
         void Log(object data, string level)
         {
+            if (data == null)
+            {
+                return;
+            }
+
             var row = BuildRow(data, level);
             this._rows.Add(row);
         }
