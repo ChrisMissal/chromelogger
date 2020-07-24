@@ -5,9 +5,10 @@
 The .NET Version of chromelogger. Add output to the Chrome console from your .NET 
 application's server-side code.
 
-Install with NuGet: http://nuget.org/packages/ChromeLogger/
+## For ASP.NET Classic (System.Web)
+Install with NuGet: https://nuget.org/packages/ChromeLogger.AspNet/
 
-## Setup
+### Setup
 
 At the end of your request, you'll need to set the custom ChromeLogger header, here's an example:
 
@@ -20,6 +21,18 @@ public class WebApiApplication : HttpApplication
     }
 }
 ```
+
+## For ASP.NET Core (2.2.2 and newer)
+Install with NuGet: https://nuget.org/packages/ChromeLogger.AspNetCore/
+
+### Setup
+
+In your `Startup` class add a `using ChromeLogger;` line. Then in the `ConfigureServices` method, add a call to `services.AddChromeLogger();`. Finally in the very first line of the `Configure` method, add a call to `app.UseChromeLogger();`. It is probably a good idea to only make this call in a non-production environment.
+
+# Changelog
+### Version 1.0.0
+
+Refactoring project to new project format. Add ASP.NET Core support (2.2.2 and higher)
 
 ### Version 0.1.2
 
