@@ -3,19 +3,25 @@ using System.Linq;
 
 namespace ChromeLogger
 {
-    internal class StackData
+    readonly struct StackData
     {
+        public string FileName { get; }
+        public int LineNumber { get; }
+
         public StackData(StackTrace stackTrace)
         {
             var frames = stackTrace.GetFrames();
+            
+            if (frames == null || frames.Length == 0)
+            {
+                this.LineNumber = 0;
+                this.FileName = "<unknown>";
+                return;
+            }
+
             var callSite = frames.First();
-
-            FileName = callSite.GetFileName();
-            LineNumber = callSite.GetFileLineNumber();
+            this.FileName = callSite.GetFileName();
+            this.LineNumber = callSite.GetFileLineNumber();
         }
-
-        public string FileName { get; private set; }
-
-        public int LineNumber { get; private set; }
     }
 }

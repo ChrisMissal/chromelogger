@@ -1,27 +1,44 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChromeLogger", "ChromeLogger\ChromeLogger.csproj", "{C1ED8BA3-D91C-417F-B391-F8D4E1D4C07C}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChromeLogger.AspNet", "ChromeLogger.AspNet\ChromeLogger.AspNet.csproj", "{6C3DD5B2-DD86-4FEB-AD5A-C4E953529920}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F97AF2AB-E49C-4B11-839B-6718D9A4947F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ED02775E-88A3-4B26-B860-7AEF4953CA9C}"
 	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
+		.editorconfig = .editorconfig
+		icon128.png = icon128.png
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChromeLogger.AspNetCore", "ChromeLogger.AspNetCore\ChromeLogger.AspNetCore.csproj", "{BE70539B-A997-4700-93C2-47ADC1F05073}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ChromeLogger", "ChromeLogger\ChromeLogger.shproj", "{689A0894-078A-438E-9739-B9AAB4C1BA83}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		ChromeLogger\ChromeLogger.projitems*{689a0894-078a-438e-9739-b9aab4c1ba83}*SharedItemsImports = 13
+		ChromeLogger\ChromeLogger.projitems*{6c3dd5b2-dd86-4feb-ad5a-c4e953529920}*SharedItemsImports = 5
+		ChromeLogger\ChromeLogger.projitems*{be70539b-a997-4700-93c2-47adc1f05073}*SharedItemsImports = 5
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C1ED8BA3-D91C-417F-B391-F8D4E1D4C07C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C1ED8BA3-D91C-417F-B391-F8D4E1D4C07C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C1ED8BA3-D91C-417F-B391-F8D4E1D4C07C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C1ED8BA3-D91C-417F-B391-F8D4E1D4C07C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C3DD5B2-DD86-4FEB-AD5A-C4E953529920}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C3DD5B2-DD86-4FEB-AD5A-C4E953529920}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C3DD5B2-DD86-4FEB-AD5A-C4E953529920}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C3DD5B2-DD86-4FEB-AD5A-C4E953529920}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE70539B-A997-4700-93C2-47ADC1F05073}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE70539B-A997-4700-93C2-47ADC1F05073}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE70539B-A997-4700-93C2-47ADC1F05073}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE70539B-A997-4700-93C2-47ADC1F05073}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6D0EA6BA-AD63-434C-9CA9-10CB24FCB339}
 	EndGlobalSection
 EndGlobal

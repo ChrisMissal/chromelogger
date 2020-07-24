@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net461</TargetFramework>
+    <RootNamespace>ChromeLogger</RootNamespace>
+    <Description>chrome extension for server side console logging with ASP.NET Classic (System.Web)</Description>
+    <Copyright>Copyright © Chris Missal 2013-2020</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/ChrisMissal/chromelogger</PackageProjectUrl>
+    <PackageIcon>icon128.png</PackageIcon>
+    <RepositoryUrl>https://github.com/ChrisMissal/chromelogger</RepositoryUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <PackageTags>chrome console server-side asp.net</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Web" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\icon128.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="4.7.2" />
+  </ItemGroup>
+
+  <Import Project="..\ChromeLogger\ChromeLogger.projitems" Label="Shared" />
+
+</Project>

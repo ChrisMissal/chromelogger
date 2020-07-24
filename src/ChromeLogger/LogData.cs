@@ -1,31 +1,27 @@
 using System.Diagnostics;
 using System.Reflection;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
 namespace ChromeLogger
 {
-    internal class LogData
+    [SuppressMessage("ReSharper", "UnusedAutoPropertyAccessor.Global")]
+    readonly struct LogData
     {
-        private static string _version;
+        static readonly string s_Version = FileVersionInfo
+            .GetVersionInfo(Assembly.GetExecutingAssembly().Location)
+            .FileVersion;
+
+        public string Version { get; }
+        public string[] Columns { get; }
+        public object[] Rows { get; }
 
         public LogData(IEnumerable<object> rows)
         {
-            Version = GetVersion();
-            Columns = new[] { "log", "backtrace", "type" };
-
-            Rows = rows.ToArray();
+            this.Version = s_Version;
+            this.Columns = new[] { "log", "backtrace", "type" };
+            this.Rows = rows.ToArray();
         }
-
-        private string GetVersion()
-        {
-            return _version ?? (_version = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion);
-        }
-
-        public string Version { get; private set; }
-
-        public string[] Columns { get; private set; }
-
-        public object[] Rows { get; private set; }
     }
 }
